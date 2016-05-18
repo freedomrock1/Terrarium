@@ -93,13 +93,38 @@ namespace Terr01
 
         }
 
-        
+        public DeviceType dvert(string d) {
+            DeviceType dtype = DeviceType.WorkStation;
+
+            switch (d)
+            {
+                case "WorkStation": dtype = DeviceType.WorkStation;
+                    break;
+                case "Printer": dtype = DeviceType.Printer;
+                    break;
+                case "Router": dtype = DeviceType.Router;
+                    break;
+                case "Switch": dtype = DeviceType.Switch;
+                    break;
+                case "FireWall": dtype = DeviceType.Firewall;
+                    break;
+                case "": dtype = DeviceType.WorkStation;
+                    break;
+                case "Other": dtype = DeviceType.WorkStation;
+                    break;
+
+            }
+
+
+            return dtype;
+        }
 
         string filename = "..\\..\\devices0.csv";
         public void loadNetFile() {
             int counter = 0;
             string line;
             string filepath = "";
+            string[] aline;
             try
             {
                 filepath=System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
@@ -108,6 +133,8 @@ namespace Terr01
                 while ((line = file.ReadLine()) != null)
                 {
                     Console.WriteLine(line);
+                    aline=line.Split(',');
+                    network.Add(makeDevice(aline[1], dvert(aline[2]), int.Parse(aline[3]), int.Parse(aline[4])));
                     counter++;
                 }
 
@@ -123,6 +150,14 @@ namespace Terr01
         
         
         }
+
+
+        public void saveNetFile() { 
+        
+        
+        }
+        
+        
         public void connect() {
             myConnectionString = "server=127.0.0.1;uid=root;" +
         "pwd=;database=test;";

@@ -31,7 +31,7 @@ namespace Terr01
             p1 = this.panel1;
 
             ourModel.network = new ArrayList();
-            ourModel.loadNet();
+            ourModel.loadNetFile();
 
             g = this.panel1.CreateGraphics();
             //  create icons
@@ -109,7 +109,7 @@ namespace Terr01
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ourModel.loadNetFile();
+            ourModel.saveNetFile();
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
