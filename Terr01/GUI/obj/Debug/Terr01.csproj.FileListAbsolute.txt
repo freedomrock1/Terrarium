@@ -1,0 +1,14 @@
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\bin\Debug\EntityFramework.dll
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.dll
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\bin\Debug\EntityFramework.xml
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\bin\Debug\EntityFramework.SqlServer.xml
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\obj\Debug\Terr01.csprojResolveAssemblyReference.cache
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\obj\Debug\Terr01.Form1.resources
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\obj\Debug\Terr01.Properties.Resources.resources
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\obj\Debug\Terr01.csproj.GenerateResource.Cache
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+c:\Users\Chad\documents\visual studio 2013\Projects\Project1\WindowsFormsApplication1\bin\Debug\MySql.Data.Entity.EF5.dll
