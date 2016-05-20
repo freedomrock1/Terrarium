@@ -39,6 +39,8 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuAdd = new System.Windows.Forms.ToolStripMenuItem();
             this.mnu = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnLoad = new System.Windows.Forms.Button();
+            this.txtFilename = new System.Windows.Forms.TextBox();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -113,14 +115,31 @@
             // mnuAdd
             // 
             this.mnuAdd.Name = "mnuAdd";
-            this.mnuAdd.Size = new System.Drawing.Size(152, 22);
+            this.mnuAdd.Size = new System.Drawing.Size(130, 22);
             this.mnuAdd.Text = "Add Thing";
             // 
             // mnu
             // 
             this.mnu.Name = "mnu";
-            this.mnu.Size = new System.Drawing.Size(152, 22);
+            this.mnu.Size = new System.Drawing.Size(130, 22);
             this.mnu.Text = "Edit";
+            // 
+            // btnLoad
+            // 
+            this.btnLoad.Location = new System.Drawing.Point(346, 601);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 6;
+            this.btnLoad.Text = "Load ";
+            this.btnLoad.UseVisualStyleBackColor = true;
+            this.btnLoad.Click += new System.EventHandler(this.btnLoad_Click);
+            // 
+            // txtFilename
+            // 
+            this.txtFilename.Location = new System.Drawing.Point(438, 602);
+            this.txtFilename.Name = "txtFilename";
+            this.txtFilename.Size = new System.Drawing.Size(446, 20);
+            this.txtFilename.TabIndex = 7;
             // 
             // Form1
             // 
@@ -128,6 +147,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(896, 730);
+            this.Controls.Add(this.txtFilename);
+            this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnSnap);
             this.Controls.Add(this.txt1);
@@ -137,6 +158,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Terrarium";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -154,6 +176,8 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuAdd;
         private System.Windows.Forms.ToolStripMenuItem mnu;
+        private System.Windows.Forms.Button btnLoad;
+        private System.Windows.Forms.TextBox txtFilename;
     }
 }
 

@@ -32,6 +32,7 @@ namespace Terr01
 
             ourModel.network = new ArrayList();
             ourModel.loadNetFile();
+            this.txtFilename.Text = ourModel.filename;
 
             g = this.panel1.CreateGraphics();
             //  create icons
@@ -50,8 +51,11 @@ namespace Terr01
                 // add to page
                 this.p1.Controls.Add(ic);
                 ic.device = d;
-                ic.Top = d.location.y;
-                ic.Left = d.location.x;
+                ic.Top = ic.loc.y = d.loc.y;
+                ic.Left = ic.loc.x = d.loc.x;
+                ic.loc.z = d.loc.z;
+                ic.loc.room = d.loc.room;
+                
                 ic.dtype = d.type;
                 ic.setColor();
                 ic.Show();
@@ -103,13 +107,23 @@ namespace Terr01
         private void btnSnap_Click(object sender, EventArgs e)
         {
             // for each device straiten out
-            this.ourModel.connect();
+            //this.ourModel.connect();
             
         }
-
+        private void updateLocs() {
+            int count = 0;
+            foreach (Icon ic in this.p1.Controls)// ourModel.network)
+            {
+                count++;
+                ic.device.loc = ic.loc;
+            }
+        } 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            ourModel.saveNetFile();
+            // update model with 
+            updateLocs();
+            ourModel.filename = this.txtFilename.Text;
+            ourModel.saveNetFile("");
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
@@ -122,6 +136,27 @@ namespace Terr01
 
                 this.contextMenuStrip1.Show(p1, x, y);
             }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLoad_Click(object sender, EventArgs e)
+        {
+            // update filename  todo:validate filename
+            ourModel.filename = txtFilename.Text;
+            // load file into network
+            ourModel.network = new ArrayList();
+            ourModel.loadNetFile();
+
+            // update icons 
+            
+                // delete old icons
+            this.p1.Controls.Clear();
+                // create new icons
+            this.makeIcons();
         }
 
 

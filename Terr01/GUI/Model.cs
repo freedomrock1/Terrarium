@@ -29,20 +29,52 @@ namespace Terr01
         {
             // name, type, location, 
             // network info
-            Location l = new Location();
+            MapLocation l = new MapLocation();
             l.x = x;
             l.y = y;
 
             NetworkInfo n = new NetworkInfo();
 
             Device d = new Device();
+            d.did = 0;
             d.name = name;
             d.type = dt;
 
-            d.location = l;
+            d.loc = l;
             d.net = n;
             return d;
         }
+        public Device makeDevice(string name, DeviceType dt, MapLocation loc, NetworkInfo net)
+        {
+            // name, type, location, 
+            // network info
+
+            Device d = new Device();
+            d.did = 0;
+            d.name = name;
+            d.type = dt;
+
+            d.loc = loc;
+            d.net = net;
+            return d;
+        }
+
+        public Device makeDevice(int did, string name, DeviceType dt, MapLocation loc, NetworkInfo net)
+        {
+            // name, type, location, 
+            // network info
+
+            Device d = new Device();
+            d.did = did;
+            d.name = name;
+            d.type = dt;
+
+            d.loc = loc;
+            d.net = net;
+            return d;
+        }
+
+
 
         public void loadNet()
         {
@@ -119,12 +151,20 @@ namespace Terr01
             return dtype;
         }
 
-        string filename = "..\\..\\devices0.csv";
+        public string filename = "..\\..\\devices0.csv";
         public void loadNetFile() {
             int counter = 0;
-            string line;
             string filepath = "";
+            
+            string line;
             string[] aline;
+            int did;
+            string name;
+            MapLocation loc;
+            int x, y, z, room;
+            DeviceType dt;
+            NetworkInfo net;
+
             try
             {
                 filepath=System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
@@ -134,7 +174,17 @@ namespace Terr01
                 {
                     Console.WriteLine(line);
                     aline=line.Split(',');
-                    network.Add(makeDevice(aline[1], dvert(aline[2]), int.Parse(aline[3]), int.Parse(aline[4])));
+                    did = int.Parse(aline[0]);
+                    name = aline[1];
+                    dt = dvert(aline[2]); 
+                    x = int.Parse(aline[3]);
+                    y = int.Parse(aline[4]);
+                    z = int.Parse(aline[5]);
+                    room = int.Parse(aline[6]);
+                    loc = new MapLocation(x,y,z,room);
+                    net = new NetworkInfo();
+
+                    network.Add(makeDevice(did,name,dt ,loc , net));
                     counter++;
                 }
 
@@ -152,9 +202,39 @@ namespace Terr01
         }
 
 
-        public void saveNetFile() { 
-        
-        
+        public void saveNetFile()
+        {
+
+
+        }
+        public void saveNetFile(string n)
+        {
+            // declare
+            int counter = 0;
+            string line;
+            string filepath = "";
+            string[] aline;
+            filename = "devices0.csv";
+            // open
+
+            System.IO.StreamWriter file =  new System.IO.StreamWriter(filename);
+
+            // write
+
+                // whille arreaylist
+                foreach (Device d in network) {
+                    // build line
+                    line ="";
+                    // id , type, name, x,y,z,room, netinfo
+                    line = d.did + "," + d.name +"," + d.type +  "," + d.loc.x + "," + d.loc.y + "," + d.loc.z + "," + d.loc.room + "," + "0";    
+                    // write line
+                    file.WriteLine(line);
+                    counter++;
+                }
+            // close
+
+            file.Close();
+
         }
         
         

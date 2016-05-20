@@ -29,3 +29,4 @@ C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\GUI\obj\Debug\GUI.csprojResolveA
 C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\GUI\obj\Debug\Terr01.Form1.resources
 C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\GUI\obj\Debug\Terr01.Properties.Resources.resources
 C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\GUI\obj\Debug\Terr01.Icon.resources

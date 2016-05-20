@@ -9,9 +9,10 @@ namespace Terr01
     public class Device
     {
         // name
+        public int did;
         public string name;
         public DeviceType type;
-        public Location location;
+        public MapLocation loc;
         public NetworkInfo net;
 
 
@@ -52,13 +53,13 @@ namespace Terr01
     }
 
 
-    public class Location
+    public class MapLocation
     {
         public 
         int x, y, z;
         public int room;
 
-        public Location()
+        public MapLocation()
         {
             this.x = 0;
             this.y = 0;
@@ -66,7 +67,7 @@ namespace Terr01
             this.room = 0;
 
         }
-        public Location(int x, int y, int z, int room) {
+        public MapLocation(int x, int y, int z, int room) {
             this.x = x;
             this.y = y;
             this.z = z;
@@ -99,7 +100,7 @@ namespace Terr01
         //int[] ip;
         public byte[] ip;
         public string mac;
-        public byte[] subnet;
+        public byte[] mask;
 
 
     }
@@ -108,6 +109,11 @@ namespace Terr01
     {
         public Device one;
         public Device two;
+
+    }
+
+    public class Layer3Switch : Device
+    {
 
     }
     // physical info
