@@ -106,8 +106,17 @@ namespace Terr01
 
         private void btnSnap_Click(object sender, EventArgs e)
         {
-            // for each device straiten out
-            //this.ourModel.connect();
+            Terr01.MapLocation loc;
+ 
+            foreach (Icon ic in this.p1.Controls)// ourModel.network)
+            {
+                //count++;
+               // loc = ic.loc;
+                ic.loc.y=ic.Top = (int) Math.Floor((ic.Top+5) / 10.0)*10;
+                ic.loc.x=ic.Left = (int)Math.Floor((ic.Left+5) / 10.0) * 10;
+
+                //ic.device.loc = ic.loc;
+            }
             
         }
         private void updateLocs() {
@@ -157,6 +166,36 @@ namespace Terr01
             this.p1.Controls.Clear();
                 // create new icons
             this.makeIcons();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDBConnect_Click(object sender, EventArgs e)
+        {
+            ourModel.connect();
+
+        }
+
+
+
+
+
+        private void btnCloseDB_Click(object sender, EventArgs e)
+        {
+            ourModel.close();
+        }
+
+        private void btnSaveDB_Click(object sender, EventArgs e)
+        {
+            ourModel.saveNetDB();
+        }
+
+        private void btnUpdateDB_Click(object sender, EventArgs e)
+        {
+            ourModel.UpdateDB();
         }
 
 

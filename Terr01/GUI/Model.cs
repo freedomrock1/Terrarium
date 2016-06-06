@@ -15,8 +15,15 @@ namespace Terr01
 
         MySql.Data.MySqlClient.MySqlConnection conn;
         string myConnectionString;
-   
 
+        DB db;
+
+        public Model() {
+            network = new ArrayList();
+            db = new DB();
+            
+        }
+        
 
         public Device makeDevice()
         {
@@ -75,7 +82,7 @@ namespace Terr01
         }
 
 
-
+        // hard code
         public void loadNet()
         {
             // add devices
@@ -239,20 +246,39 @@ namespace Terr01
         
         
         public void connect() {
-            myConnectionString = "server=127.0.0.1;uid=root;" +
-        "pwd=;database=test;";
-            try
-            {
-                conn = new MySql.Data.MySqlClient.MySqlConnection();
-                conn.ConnectionString = myConnectionString;
-                conn.Open();
-            }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
+
+            db.OpenConnection();
         
+            
+        }
+
+       
+
+
+
+
+        public void close() {
+
+            db.CloseConnection();
+        }
+
+        public void loadNetDB() { 
+            // connect
         
+            // get data 
+
+            // put make net work 
+
+
+
+            // close database
+        }
+        public void saveNetDB() {
+            db.Insert();
+        }
+
+        public void UpdateDB() {
+            db.Update();
         }
 
 

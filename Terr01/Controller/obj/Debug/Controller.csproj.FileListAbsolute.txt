@@ -14,3 +14,5 @@ C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\Controller\bin\Debug\GUI.pdb
 C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\Controller\obj\Debug\Controller.csprojResolveAssemblyReference.cache
 C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\Controller\obj\Debug\Project1.exe
 C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\Controller\obj\Debug\Project1.pdb
+C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\Controller\bin\Debug\System.Data.SQLite.dll
+C:\Users\Chad\Documents\GitHub\Terrarium\Terr01\Controller\bin\Debug\System.Data.SQLite.pdb

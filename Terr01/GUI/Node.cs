@@ -112,9 +112,13 @@ namespace Terr01
 
     }
 
-    public class Layer3Switch : Device
+    public class Layer3Switch:Switch
     {
 
+    }
+
+    public class RouterAdvanced : Router
+    {
     }
     // physical info
     // network ID

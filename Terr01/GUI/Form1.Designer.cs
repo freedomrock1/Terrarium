@@ -41,7 +41,13 @@
             this.mnu = new System.Windows.Forms.ToolStripMenuItem();
             this.btnLoad = new System.Windows.Forms.Button();
             this.txtFilename = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDBConnect = new System.Windows.Forms.Button();
+            this.btnSaveDB = new System.Windows.Forms.Button();
+            this.btnCloseDB = new System.Windows.Forms.Button();
+            this.btnUpdateDB = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -141,12 +147,67 @@
             this.txtFilename.Size = new System.Drawing.Size(446, 20);
             this.txtFilename.TabIndex = 7;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.btnUpdateDB);
+            this.groupBox1.Controls.Add(this.btnCloseDB);
+            this.groupBox1.Controls.Add(this.btnSaveDB);
+            this.groupBox1.Controls.Add(this.btnDBConnect);
+            this.groupBox1.Location = new System.Drawing.Point(891, 32);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(86, 341);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "DB";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnDBConnect
+            // 
+            this.btnDBConnect.Location = new System.Drawing.Point(5, 19);
+            this.btnDBConnect.Name = "btnDBConnect";
+            this.btnDBConnect.Size = new System.Drawing.Size(75, 23);
+            this.btnDBConnect.TabIndex = 0;
+            this.btnDBConnect.Text = "Connect";
+            this.btnDBConnect.UseVisualStyleBackColor = true;
+            this.btnDBConnect.Click += new System.EventHandler(this.btnDBConnect_Click);
+            // 
+            // btnSaveDB
+            // 
+            this.btnSaveDB.Location = new System.Drawing.Point(5, 48);
+            this.btnSaveDB.Name = "btnSaveDB";
+            this.btnSaveDB.Size = new System.Drawing.Size(75, 23);
+            this.btnSaveDB.TabIndex = 1;
+            this.btnSaveDB.Text = "Insert0";
+            this.btnSaveDB.UseVisualStyleBackColor = true;
+            this.btnSaveDB.Click += new System.EventHandler(this.btnSaveDB_Click);
+            // 
+            // btnCloseDB
+            // 
+            this.btnCloseDB.Location = new System.Drawing.Point(7, 197);
+            this.btnCloseDB.Name = "btnCloseDB";
+            this.btnCloseDB.Size = new System.Drawing.Size(75, 23);
+            this.btnCloseDB.TabIndex = 2;
+            this.btnCloseDB.Text = "Close";
+            this.btnCloseDB.UseVisualStyleBackColor = true;
+            this.btnCloseDB.Click += new System.EventHandler(this.btnCloseDB_Click);
+            // 
+            // btnUpdateDB
+            // 
+            this.btnUpdateDB.Location = new System.Drawing.Point(5, 86);
+            this.btnUpdateDB.Name = "btnUpdateDB";
+            this.btnUpdateDB.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdateDB.TabIndex = 3;
+            this.btnUpdateDB.Text = "Update";
+            this.btnUpdateDB.UseVisualStyleBackColor = true;
+            this.btnUpdateDB.Click += new System.EventHandler(this.btnUpdateDB_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(896, 730);
+            this.ClientSize = new System.Drawing.Size(989, 730);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtFilename);
             this.Controls.Add(this.btnLoad);
             this.Controls.Add(this.btnSave);
@@ -160,6 +221,7 @@
             this.Text = "Terrarium";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,6 +240,11 @@
         private System.Windows.Forms.ToolStripMenuItem mnu;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.TextBox txtFilename;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button btnDBConnect;
+        private System.Windows.Forms.Button btnSaveDB;
+        private System.Windows.Forms.Button btnCloseDB;
+        private System.Windows.Forms.Button btnUpdateDB;
     }
 }
 
