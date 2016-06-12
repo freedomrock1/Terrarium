@@ -21,15 +21,70 @@ namespace Terr01
             db = new DB();
             
         }
-        
 
-        public Device makeDevice()
+
+        public Device makeDevice(DeviceType dt)
         {
             Device d = new Device();
+
+            DeviceType dtype = DeviceType.WorkStation;
+
+            switch (dt)
+            {
+                case DeviceType.WorkStation:d=new WorkStation();
+                    break;
+                case  DeviceType.Printer:d=new Printer();
+                    break;
+                case DeviceType.Router:d=new Router();
+                    break;
+                case  DeviceType.Switch:d=new Switch();
+                    break;
+                case DeviceType.Firewall:d=new Firewall();
+                    break;
+                case DeviceType.Bridge:d=new Bridge();
+                    break;
+
+                Default:;
+                    break;
+
+            }
+
+
+            
 
             return d;
         }
 
+        public Device makeDevice(String dt)
+        {
+            Device d = new Device();
+
+            DeviceType dtype = DeviceType.WorkStation;
+
+            switch (dt)
+            {
+                case "WorkStation": dtype = DeviceType.WorkStation;
+                    break;
+                case "Printer": dtype = DeviceType.Printer;
+                    break;
+                case "Router": dtype = DeviceType.Router;
+                    break;
+                case "Switch": dtype = DeviceType.Switch;
+                    break;
+                case "FireWall": dtype = DeviceType.Firewall;
+                    break;
+                case "": dtype = DeviceType.WorkStation;
+                    break;
+                case "Other": dtype = DeviceType.WorkStation;
+                    break;
+
+            }
+
+
+
+
+            return d;
+        }
         public Device makeDevice(string name, DeviceType dt, int x, int y)
         {
             // name, type, location, 
@@ -69,7 +124,7 @@ namespace Terr01
             // name, type, location, 
             // network info
 
-            Device d = new Device();
+            Device d = makeDevice(dt);
             d.did = did;
             d.name = name;
             d.type = dt;
@@ -172,7 +227,7 @@ namespace Terr01
 
             try
             {
-                filepath=System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
+                //filepath=System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
                 System.IO.StreamReader file =
                   new System.IO.StreamReader(filename);
                 while ((line = file.ReadLine()) != null)

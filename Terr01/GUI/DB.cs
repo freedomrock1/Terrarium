@@ -49,7 +49,7 @@ namespace Terr01
             return "";
 
         }
-
+        //MySql.Data.MySqlClient.
 
         //open connection to database
         public bool OpenConnection()
@@ -181,8 +181,7 @@ namespace Terr01
 
                     list.Add(line); 
 
-                   // list[1].Add(dataReader["name"] + "");
-                   // list[2].Add(dataReader["age"] + "");
+
                 }
 
                 //close Data Reader
