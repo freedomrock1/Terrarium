@@ -19,10 +19,12 @@ namespace Terr01
         private string password;
         private string myConnectionString;
 
-        public DB() {
+        public DB()
+        {
             init();
         }
-         ~DB() {
+        ~DB()
+        {
             this.CloseConnection();
         }
 
@@ -37,10 +39,6 @@ namespace Terr01
                 conn.ConnectionString = myConnectionString;
 
             }
-            catch (MySql.Data.MySqlClient.MySqlException ex)
-            {
-                return ex.Message;
-            }
             catch (Exception ex)
             {
                 return ex.Message;
@@ -49,7 +47,7 @@ namespace Terr01
             return "";
 
         }
-        //MySql.Data.MySqlClient.
+
 
         //open connection to database
         public bool OpenConnection()
@@ -57,21 +55,6 @@ namespace Terr01
             try
             {
                 conn.Open();
-            }
-            catch (MySqlException ex)
-            {
-
-                switch (ex.Number)
-                {
-                    case 0:
-                        //return "Cannot connect to server.  Contact administrator";
-                        break;
-
-                    case 1045:
-                        //return "Invalid username/password, please try again";
-                        break;
-                }
-                return false;
             }
             catch (Exception ex)
             {
@@ -91,9 +74,9 @@ namespace Terr01
                 conn.Close();
                 return true;
             }
-            catch (MySqlException ex)
+            catch (Exception ex)
             {
-                //return ex.Message;
+                //todo return ex.Message;
                 return false;
             }
         }
@@ -163,7 +146,7 @@ namespace Terr01
         {
             ArrayList list = new ArrayList();
             ArrayList line = new ArrayList();
-            
+
             string query = "SELECT * FROM devices0";
             if (this.OpenConnection() == true)
             {
@@ -171,17 +154,18 @@ namespace Terr01
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 //Create a data reader and Execute the command
                 MySqlDataReader dataReader = cmd.ExecuteReader();
-                
+
                 //Read the data and store them in the list
                 while (dataReader.Read())
                 {
-                   // line=dataReader.
+                    // line=dataReader.
                     line = new ArrayList();
                     line.Add(dataReader["name"]);
 
-                    list.Add(line); 
+                    list.Add(line);
 
-
+                    // list[1].Add(dataReader["name"] + "");
+                    // list[2].Add(dataReader["age"] + "");
                 }
 
                 //close Data Reader
