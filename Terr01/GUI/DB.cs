@@ -1,9 +1,10 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 
 namespace Terr01
 {
@@ -26,7 +27,7 @@ namespace Terr01
         }
 
 
-        public void init()
+        public string init()
         {
             myConnectionString = "server=127.0.0.1;uid=root;" +
         "pwd=;database=test;";
@@ -38,13 +39,14 @@ namespace Terr01
             }
             catch (MySql.Data.MySqlClient.MySqlException ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                return ex.Message;
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);  
+                return ex.Message;
             }
 
+            return "";
 
         }
 
@@ -62,18 +64,18 @@ namespace Terr01
                 switch (ex.Number)
                 {
                     case 0:
-                        System.Windows.Forms.MessageBox.Show("Cannot connect to server.  Contact administrator");
+                        //return "Cannot connect to server.  Contact administrator";
                         break;
 
                     case 1045:
-                        System.Windows.Forms.MessageBox.Show("Invalid username/password, please try again");
+                        //return "Invalid username/password, please try again";
                         break;
                 }
                 return false;
             }
             catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                //return ex.Message;
                 return false;
             }
 
@@ -91,7 +93,7 @@ namespace Terr01
             }
             catch (MySqlException ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                //return ex.Message;
                 return false;
             }
         }
@@ -146,10 +148,60 @@ namespace Terr01
         //Delete statement
         public void Delete()
         {
+            string query = "DELETE FROM devices0 WHERE name='bob01'";
+
+            if (this.OpenConnection() == true)
+            {
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+            }
         }
 
         //Select statement
-        public List<string>[] Select()
+        public ArrayList Select()
+        {
+            ArrayList list = new ArrayList();
+            ArrayList line = new ArrayList();
+            
+            string query = "SELECT * FROM devices0";
+            if (this.OpenConnection() == true)
+            {
+                //Create Command
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                //Create a data reader and Execute the command
+                MySqlDataReader dataReader = cmd.ExecuteReader();
+                
+                //Read the data and store them in the list
+                while (dataReader.Read())
+                {
+                   // line=dataReader.
+                    line = new ArrayList();
+                    line.Add(dataReader["name"]);
+
+                    list.Add(line); 
+
+                   // list[1].Add(dataReader["name"] + "");
+                   // list[2].Add(dataReader["age"] + "");
+                }
+
+                //close Data Reader
+                dataReader.Close();
+
+                //close Connection
+                this.CloseConnection();
+
+                //return list to be displayed
+                return list;
+            }
+            else
+            {
+                return list;
+            }
+            return null;
+        }
+        //Select statement
+        public List<string>[] Select(string s)
         {
 
             return null;
@@ -162,15 +214,7 @@ namespace Terr01
             return 0;
         }
 
-        //Backup
-        public void Backup()
-        {
-        }
 
-        //Restore
-        public void Restore()
-        {
-        }
 
 
 

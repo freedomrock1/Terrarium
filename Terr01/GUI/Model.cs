@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Terr01
 {
@@ -13,8 +12,7 @@ namespace Terr01
         // device list
         public ArrayList network;
 
-        MySql.Data.MySqlClient.MySqlConnection conn;
-        string myConnectionString;
+
 
         DB db;
 
@@ -261,6 +259,11 @@ namespace Terr01
 
             db.CloseConnection();
         }
+
+        // get a list of nodes
+        public void loadDevices() { 
+        }
+
 
         public void loadNetDB() { 
             // connect
