@@ -212,10 +212,13 @@ namespace Terr01
         }
 
         public string filename = "..\\..\\devices0.csv";
-        public void loadNetFile() {
+
+        public void loadNetFile(String filename) {
             int counter = 0;
             string filepath = "";
-            
+
+            if (filename == "") filename = "devices0.csv";
+
             string line;
             string[] aline;
             int did;
@@ -227,7 +230,9 @@ namespace Terr01
 
             try
             {
-                //filepath=System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
+                // todo save old network incase of errors
+                this.network = new ArrayList();
+                
                 System.IO.StreamReader file =
                   new System.IO.StreamReader(filename);
                 while ((line = file.ReadLine()) != null)
@@ -267,14 +272,14 @@ namespace Terr01
 
 
         }
-        public void saveNetFile(string n)
+        public void saveNetFile(string filename)
         {
             // declare
             int counter = 0;
             string line;
             string filepath = "";
             string[] aline;
-            filename = "devices0.csv";
+            if (filename=="") filename = "devices0.csv";
             // open
 
             System.IO.StreamWriter file =  new System.IO.StreamWriter(filename);

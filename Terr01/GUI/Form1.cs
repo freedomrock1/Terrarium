@@ -22,18 +22,18 @@ namespace Terr01
 
         Model ourModel = new Model();
 
-        
+        String filename = "";
         public Form1()
         {
             InitializeComponent();
             
             /// init globals
             p1 = this.panel1;
-
+            filename = "";
             ourModel.network = new ArrayList();
-            ourModel.loadNetFile();
+            
             this.txtFilename.Text = ourModel.filename;
-
+            ourModel.loadNetFile(filename);
             g = this.panel1.CreateGraphics();
             //  create icons
             makeIcons();
@@ -77,7 +77,7 @@ namespace Terr01
 
 
 
-        System.Drawing.Graphics g;
+        System.Drawing.Graphics g;  
         private void DrawGrid(){
             
             int i=0;
@@ -132,7 +132,8 @@ namespace Terr01
             // update model with 
             updateLocs();
             ourModel.filename = this.txtFilename.Text;
-            ourModel.saveNetFile("");
+            filename = this.txtFilename.Text;
+            ourModel.saveNetFile(filename);
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
@@ -149,16 +150,17 @@ namespace Terr01
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //filepath=System.IO.Path.GetDirectoryName(System.Windows.Forms.Application.ExecutablePath);
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
             // update filename  todo:validate filename
             ourModel.filename = txtFilename.Text;
+            filename = txtFilename.Text;
             // load file into network
-            ourModel.network = new ArrayList();
-            ourModel.loadNetFile();
+            
+            ourModel.loadNetFile(filename);
 
             // update icons 
             
