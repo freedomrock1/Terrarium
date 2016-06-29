@@ -25,3 +25,12 @@ F:\Users\Jack\OneDrive\C#\Wall generator\obj\Debug\Wall generator.csprojResolveA
 F:\Users\Jack\OneDrive\C#\Wall generator\obj\Debug\Wall_generator.WallGenerator.resources
 F:\Users\Jack\OneDrive\C#\Wall generator\obj\Debug\Wall_generator.Properties.Resources.resources
 F:\Users\Jack\OneDrive\C#\Wall generator\obj\Debug\Wall generator.csproj.GenerateResource.Cache
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\bin\Debug\Wall generator.exe.config
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\obj\Debug\Wall generator.exe
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\obj\Debug\Wall generator.pdb
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\bin\Debug\Wall generator.exe
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\bin\Debug\Wall generator.pdb
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\obj\Debug\Wall generator.csprojResolveAssemblyReference.cache
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\obj\Debug\Wall_generator.WallGenerator.resources
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\obj\Debug\Wall_generator.Properties.Resources.resources
+F:\Users\Jack\OneDrive\Github\Terrarium\Wall generator\obj\Debug\Wall generator.csproj.GenerateResource.Cache

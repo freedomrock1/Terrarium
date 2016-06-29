@@ -13,6 +13,7 @@ using System.IO;
 
 namespace Wall_generator {
     public partial class WallGenerator : Form {
+        const float FOOT_TO_METER = 0.3048f;
         Bitmap svgView;
         List<PointFloat> vertexList = new List<PointFloat>();
         List<Tuple<int, int>> edgeList = new List<Tuple<int, int>>();
@@ -380,10 +381,16 @@ namespace Wall_generator {
             List<int[]> faceList = new List<int[]>();
             List<PointFloat> outputList = new List<PointFloat>();
             Dictionary<int, int> vertexCache = new Dictionary<int, int>();
-            float wallHeight = (float) numericUpDown1.Value;
+            float wallHeight = (float) numericUpDown1.Value * FOOT_TO_METER;
+            float minX = vertexList[0].x;
+            float maxX = vertexList[0].x;
+
             foreach (PointFloat point in vertexList) {
                 outputList.Add(point);
+                if (point.x > maxX) maxX = point.x;
+                if (point.x < minX) minX = point.x;
             }
+            float footPerPixel = (float)numericUpDown2.Value / (maxX - minX);
 
             foreach (Tuple<int, int> edge in edgeList) {
                 int[] newFace = new int[4];
@@ -414,7 +421,9 @@ namespace Wall_generator {
 
             String outputString = "o Walls\n";
             foreach (PointFloat vertex in outputList) {
-                outputString += "v " + vertex.x + " " + vertex.z + " " + vertex.y + "\n";
+                outputString += "v " + (vertex.x * footPerPixel * FOOT_TO_METER)
+                    + " " + vertex.z // z is already in meter.
+                    + " " + (vertex.y * footPerPixel * FOOT_TO_METER) + "\n";
             }
 
             foreach (int[] face in faceList) {
