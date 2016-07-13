@@ -384,11 +384,15 @@ namespace Wall_generator {
             float wallHeight = (float) numericUpDown1.Value * FOOT_TO_METER;
             float minX = vertexList[0].x;
             float maxX = vertexList[0].x;
+            float minY = vertexList[0].y;
+            float maxY = vertexList[0].y;
 
             foreach (PointFloat point in vertexList) {
                 outputList.Add(point);
                 if (point.x > maxX) maxX = point.x;
                 if (point.x < minX) minX = point.x;
+                if (point.y > maxY) maxY = point.y;
+                if (point.y < minY) minY = point.y;
             }
             float footPerPixel = (float)numericUpDown2.Value / (maxX - minX);
 
@@ -421,9 +425,9 @@ namespace Wall_generator {
 
             String outputString = "o Walls\n";
             foreach (PointFloat vertex in outputList) {
-                outputString += "v " + (vertex.x * footPerPixel * FOOT_TO_METER)
+                outputString += "v " + ((vertex.x - minX) * footPerPixel * FOOT_TO_METER)
                     + " " + vertex.z // z is already in meter.
-                    + " " + (vertex.y * footPerPixel * FOOT_TO_METER) + "\n";
+                    + " " + ((vertex.y - minY) * footPerPixel * FOOT_TO_METER) + "\n";
             }
 
             foreach (int[] face in faceList) {

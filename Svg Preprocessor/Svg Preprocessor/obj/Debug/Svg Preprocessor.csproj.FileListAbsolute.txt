@@ -1,1 +1,19 @@
 c:\users\jack\documents\visual studio 2012\Projects\Svg Preprocessor\Svg Preprocessor\bin\Debug\Svg Preprocessor.exe.config
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\bin\Debug\Svg Preprocessor.exe.config
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\bin\Debug\Svg Preprocessor.exe.config
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\bin\Debug\Svg Preprocessor.exe
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\bin\Debug\Svg Preprocessor.pdb
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg Preprocessor.csprojResolveAssemblyReference.cache
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg_Preprocessor.SvgPreprocessor.resources
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg_Preprocessor.Properties.Resources.resources
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg Preprocessor.csproj.GenerateResource.Cache
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg Preprocessor.exe
+C:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg Preprocessor.pdb
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg Preprocessor.exe
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg Preprocessor.pdb
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg Preprocessor.csprojResolveAssemblyReference.cache
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg_Preprocessor.SvgPreprocessor.resources
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg_Preprocessor.Properties.Resources.resources
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\obj\Debug\Svg Preprocessor.csproj.GenerateResource.Cache
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\bin\Debug\Svg Preprocessor.exe
+F:\Users\Jack\OneDrive\Github\Terrarium\Svg Preprocessor\Svg Preprocessor\bin\Debug\Svg Preprocessor.pdb
